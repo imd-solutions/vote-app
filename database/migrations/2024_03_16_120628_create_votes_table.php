@@ -18,7 +18,7 @@ class CreateVotesTable extends Migration
             $table->foreignId('user_id');
             $table->integer('movie_id');
             $table->string('ip_address');
-            $table->integer('location');
+            $table->string('location');
             $table->timestamps();
         });
     }

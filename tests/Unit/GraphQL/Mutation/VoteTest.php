@@ -39,7 +39,10 @@ class VoteTest extends TestCase
         $input = [
             'user_id' => $this->user->id,
             'movie_id' => $this->movie->id,
+            'location' => 'Test County',
         ];
+
+        $input['ip_address'] = '127.0.0.1';
 
         $response = $this->mutation($method, ['input' => $input], $this->messageFragment());
         $response->assertJsonStructure([
@@ -64,14 +67,18 @@ class VoteTest extends TestCase
         $vote = Vote::factory()->create([
             'user_id' => $this->user->id,
             'movie_id' => $this->movie->id,
+            'ip_address' => '127.0.0.1',
+            'location' => 'Test County',
         ]);
-
+        
         $this->assertCount(1, Vote::all());
 
         $method = 'movieVote';
         $input = [
             'user_id' => $this->user->id,
             'movie_id' => $this->movie->id,
+            'ip_address' => '127.0.0.1',
+            'location' => 'Test County',
         ];
 
         $response = $this->mutation($method, ['input' => $input], $this->messageFragment());

@@ -68,6 +68,8 @@ class Movie
 
         }
 
+        $args['input']['ip_address'] = request()->ip();
+
         Vote::create($args['input']);
 
         return [

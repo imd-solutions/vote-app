@@ -6,10 +6,11 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Laravel\Passport\Passport;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 abstract class TestCase extends BaseTestCase
 {
-    use CreatesApplication, WithFaker;
+    use CreatesApplication, WithFaker, RefreshDatabase;
 
     public function setUp(): void
     {

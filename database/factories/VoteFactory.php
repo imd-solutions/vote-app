@@ -23,6 +23,8 @@ class VoteFactory extends Factory
             'movie_id' => function () {
                 return Movie::factory()->create()->id;
             },
+            'ip_address' => '127.0.0.1',
+            'location' => 'Test County'
         ];
     }
 }

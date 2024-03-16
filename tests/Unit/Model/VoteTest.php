@@ -31,7 +31,7 @@ class VoteTest extends TestCase
     public function voteHasColumns()
     {
         $this->assertTrue(
-            Schema::hasColumns('votes', ['id', 'user_id', 'movie_id']), 1
+            Schema::hasColumns('votes', ['id', 'user_id', 'movie_id', 'ip_address', 'location']), 1
         );
     }
 

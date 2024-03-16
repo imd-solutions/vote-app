@@ -6,4 +6,5 @@ input MovieVoteInput {
             apply: ["required"]
             messages: { required: "Movie is required." }
         )
+    location: String
 }
