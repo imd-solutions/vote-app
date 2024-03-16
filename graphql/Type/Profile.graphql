@@ -1,0 +1,4 @@
+type Profile {
+    firstname: String!
+    lastname: String!
+}

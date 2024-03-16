@@ -1,0 +1,24 @@
+input MovieInput {
+    quote: String
+        @rules(
+            apply: ["required"]
+            messages: { required: "Movie quote is required." }
+        )
+    movie: String
+        @rules(
+            apply: ["required"]
+            messages: { required: "Movie is required." }
+        )
+    character: String
+        @rules(
+            apply: ["required"]
+            messages: { required: "Movie character is required." }
+        )
+    year: String
+        @rules(
+            apply: ["required"]
+            messages: { required: "Movie year is required." }
+        )
+    image_url: String
+    rating: Int
+}

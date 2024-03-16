@@ -1,0 +1,9 @@
+input MovieVoteInput {
+    user_id: Int
+        @rules(apply: ["required"], messages: { required: "User is required." })
+    movie_id: Int
+        @rules(
+            apply: ["required"]
+            messages: { required: "Movie is required." }
+        )
+}

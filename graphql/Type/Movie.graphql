@@ -1,0 +1,9 @@
+type Movie {
+    id: ID
+    quote: String
+    movie: String
+    year: Int
+    image_url: String
+    rating: Int
+    character: String
+}

@@ -1,0 +1,12 @@
+type User {
+    id: ID
+    name: String!
+    email: String!
+    password: String!
+    email_verified_at: String
+    created_at: DateTime!
+    updated_at: DateTime!
+    deleted_at: DateTime
+    profile: Profile
+    votes: [Vote]
+}

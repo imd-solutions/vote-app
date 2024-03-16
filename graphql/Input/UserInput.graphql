@@ -1,0 +1,7 @@
+input UserInput {
+    firstname: String @rules(apply: ["required"], messages: { required: "Users firstname is required."})
+    lastname: String @rules(apply: ["required"], messages: { required: "Users surname is required."})
+    email: String @rules(apply: ["required", "email", "unique:users,email"], messages: { required: "The email field is required.", email: "Please provide a valid email address.", unique: "That users email has been taken. Please try with another email."})
+    password: String @rules(apply: ["required"], messages: { required: "Password is required."})
+    confirm_password: String
+}

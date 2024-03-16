@@ -1,0 +1,4 @@
+# Movie query.
+extend type Query {
+    movies: [Movie!]! @field(resolver: "App\\GraphQL\\Queries\\Movie@all")
+}

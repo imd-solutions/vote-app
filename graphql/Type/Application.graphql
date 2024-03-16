@@ -1,0 +1,7 @@
+type Application {
+    name: String!
+    url: String!
+    version: String!
+    environment: String!
+    year: String!
+}

@@ -1,0 +1,4 @@
+type TimeStamp {
+    date: String!
+    time: String!
+}

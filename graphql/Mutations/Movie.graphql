@@ -1,0 +1,11 @@
+# Mutations for the Movies.
+#import ./../Input/MovieInput.graphql
+#import ./../Input/MovieVoteInput.graphql
+extend type Mutation {
+    movieCreate(input: MovieInput): Movie
+        @field(resolver: "App\\GraphQL\\Mutations\\Movie@create")
+    movieApiCreate(input: [MovieInput]): [Movie]
+        @field(resolver: "App\\GraphQL\\Mutations\\Movie@apiCreate")
+    movieVote(input: MovieVoteInput): Message
+        @field(resolver: "App\\GraphQL\\Mutations\\Movie@vote")
+}

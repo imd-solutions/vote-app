@@ -1,0 +1,11 @@
+# Mutations for the Users.
+#import ./../Input/UserInput.graphql
+#import ./../Input/UserUpdateInput.graphql
+extend type Mutation {
+    userCreate(input: UserInput): User
+        @field(resolver: "App\\GraphQL\\Mutations\\User@create")
+    userUpdate(id: Int, input: UserUpdateInput): User
+        @field(resolver: "App\\GraphQL\\Mutations\\User@update")
+    resendConfirmationEmail(email: String): Message
+    @field(resolver: "App\\GraphQL\\Mutations\\User@resend")
+}

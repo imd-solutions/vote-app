@@ -1,0 +1,7 @@
+models:
+  Profile:
+    user_id: id
+    firstname: string:50
+    lastname: string:50
+    relationships:
+      belongsTo: \App\Models\User
