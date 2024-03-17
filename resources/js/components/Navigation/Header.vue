@@ -1,81 +1,72 @@
 <template>
-    <section class="overflow-hidden" style="">
-        <div class="container px-4 mx-auto">
-            <div class="flex items-center justify-between py-6">
-                <div class="flex items-center gap-10">
-                    <a href="#"> </a>
-                    <ul class="hidden lg:flex items-center gap-8">
-                        <li
-                            class="hover:text-opacity-70 transition duration-200"
-                        >
-                            <a href="#">Movies</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="hidden lg:flex gap-4">
-                    <a
-                        class="py-3 px-5 rounded-full border border-gray-200 shadow text-sm font-semibold hover:bg-gray-50 focus:ring focus:ring-orange-200 transition duration-200"
-                        href="#"
-                        >Login</a
-                    >
-                    <a
-                        class="py-3 px-5 rounded-full bg-orange-500 border border-orange-600 shadow text-sm font-semibold text-white hover:bg-orange-600 focus:ring focus:ring-orange-200 transition duration-200"
-                        href="#"
-                        >Register</a
-                    >
-                </div>
+    <nav class="bg-white border-gray-200">
+        <div class="max-w-screen-xl flex flex-wrap justify-between">
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img
+                    :src="logo"
+                    class="h-32 sm:h-16"
+                    alt="Logo"
+                />
+                <span class="hidden self-center text-2xl font-semibold whitespace-nowrap sm:block">Movie Vote</span>
             </div>
-            <div
-                class="hidden navbar-menu fixed top-0 left-0 bottom-0 w-4/6 sm:max-w-xs z-50"
+            <button
+                data-collapse-toggle="navbar-default"
+                type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar-default"
+                aria-expanded="false"
+                @click="menuBar = !menuBar"
             >
-                <div
-                    class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-80"
-                ></div>
-                <nav
-                    class="relative z-10 px-9 py-8 h-full overflow-y-auto bg-white flex flex-col justify-between"
+                <span class="sr-only">Open main menu</span>
+                <svg
+                    class="w-5 h-5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 17 14"
                 >
-                    <div class="flex items-center justify-between">
-                        <a href="#"> </a>
-                        <a class="navbar-burger" href="#">
-                            <svg
-                                width="24"
-                                height="24"
-                                viewbox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M6 18L18 6M6 6L18 18"
-                                    stroke="#111827"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                ></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <ul class="flex flex-col gap-12 py-12">
-                        <li
-                            class="hover:text-opacity-70 transition duration-200"
-                        >
-                            <a href="#">Features</a>
-                        </li>
-                    </ul>
-                    <div class="flex flex-col items-center gap-6">
-                        <a
-                            class="w-full text-center py-3 px-5 rounded-full border border-gray-200 shadow text-sm font-semibold hover:bg-gray-50 focus:ring focus:ring-orange-200 transition duration-200"
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15"
+                    />
+                </svg>
+            </button>
+            <div
+                class="w-full md:block md:w-auto"
+                id="navbar-default"
+                :class="menuBar ? 'hidden' : ''"
+            >
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
+                    
+                    <li>
+                        <router-link
+                            to="/"
                             href="#"
-                            >Login</a
-                        ><a
-                            class="w-full text-center py-3 px-5 rounded-full bg-orange-500 border border-orange-600 shadow text-sm font-semibold text-white hover:bg-orange-600 focus:ring focus:ring-orange-200 transition duration-200"
-                            href="#"
-                            >Register</a
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#F40142] md:p-0"
+                            >Movies
+                        </router-link>    
+                    </li>
+                    <li>
+                        <router-link
+                            to="/auth/login"
+                            type="button"
+                            class="w-full text-white bg-[#3CACFF] hover:bg-[#F40142] focus:ring-4 focus:outline-none focus:ring-red-600 font-medium rounded-lg text-sm px-4 py-2 text-center"
                         >
-                    </div>
-                </nav>
+                            Login
+                        </router-link>
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
+    </nav>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import logo from './../../../images/logo.png'
+
+const menuBar = ref(true);
+</script>

@@ -3,7 +3,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/{any1?}/{any2?}', function () {
     return view('app');
-})
-->name('application');
+})->where('any*', '.*');
