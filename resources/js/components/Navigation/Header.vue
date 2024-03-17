@@ -1,13 +1,25 @@
+<script setup>
+import { ref } from 'vue';
+import logo from './../../../images/logo.png'
+
+const menuBar = ref(true);
+</script>
+
 <template>
     <nav class="bg-white border-gray-200">
         <div class="max-w-screen-xl flex flex-wrap justify-between">
             <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                <router-link
+                to="/"
+                class="flex space-x-2"
+                >
                 <img
                     :src="logo"
                     class="h-32 sm:h-16"
                     alt="Logo"
                 />
                 <span class="hidden self-center text-2xl font-semibold whitespace-nowrap sm:block">Movie Vote</span>
+            </router-link>
             </div>
             <button
                 data-collapse-toggle="navbar-default"
@@ -43,9 +55,9 @@
                     
                     <li>
                         <router-link
-                            to="/"
-                            href="#"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#F40142] md:p-0"
+                            to="/movies"
+                            active-class="active" 
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#F40142] md:p-0 [&.active]:text-[#F40142]"
                             >Movies
                         </router-link>    
                     </li>
@@ -63,10 +75,3 @@
         </div>
     </nav>
 </template>
-
-<script setup>
-import { ref } from 'vue';
-import logo from './../../../images/logo.png'
-
-const menuBar = ref(true);
-</script>

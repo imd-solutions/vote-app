@@ -1,6 +1,10 @@
+<script setup>
+defineProps({})
+</script>
+
 <template>
     <div>
-        This is the home page
+        Home Page
     </div>        
 </template>
 

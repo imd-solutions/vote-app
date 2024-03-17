@@ -1,3 +1,7 @@
+<script setup>
+defineProps({})
+</script>
+
 <template>
     <div class="flex h-screen">
         <div class="m-auto">
@@ -41,5 +45,3 @@
         </div>
     </div>
 </template>
-
-<script setup></script>

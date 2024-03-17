@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PassportTableSeeder::class);
         // $this->call(UserProfileTableSeeder::class);
-        // $this->call(MovieTableSeeder::class);
-        $this->call(VoteTableSeeder::class);
+        $this->call(MovieTableSeeder::class);
+        // $this->call(VoteTableSeeder::class);
     }
 }
