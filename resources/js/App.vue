@@ -7,5 +7,9 @@
 
 <script setup>
 import Navigation from './components/navigation/Header.vue';
+import { useQuery } from "@vue/apollo-composable";
+import GET_APPLICATION from './apollo/query/application'
+
+const { results } = useQuery(GET_APPLICATION)
 
 </script>
